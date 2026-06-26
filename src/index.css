@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bebas Neue", sans-serif;
+  --font-sans: "Outfit", sans-serif;
+
+  --color-brand-bg: #515151;
+  --color-brand-green: #5cff9a;
+  --color-brand-pink: #ff3c78;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-white font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .glow-green {
+    box-shadow: 0 0 24px rgba(92, 255, 154, 0.35);
+  }
+  .text-glow-green {
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+  }
+}
