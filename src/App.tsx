@@ -34,12 +34,12 @@ function SocialLinkButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex w-full items-stretch overflow-hidden rounded-2xl border border-white/12 bg-white/[0.06] transition hover:border-brand-green/40 hover:bg-white/[0.09] active:scale-[0.99]"
+      className="group flex w-full items-stretch overflow-hidden rounded-2xl bg-white shadow-[0_8px_24px_rgba(0,0,0,0.22)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_rgba(0,0,0,0.28)] active:translate-y-0 active:scale-[0.99]"
     >
-      <span className="flex w-14 shrink-0 items-center justify-center border-r border-white/10 bg-white/[0.04] text-brand-green transition group-hover:bg-brand-green/10">
-        <Icon className="h-5 w-5" strokeWidth={2} aria-hidden />
+      <span className="flex w-[4.25rem] shrink-0 items-center justify-center border-r border-black/[0.08] text-[#1a1a1a] transition group-hover:text-brand-green">
+        <Icon className="h-[1.35rem] w-[1.35rem]" strokeWidth={2.25} aria-hidden />
       </span>
-      <span className="flex flex-1 items-center justify-center px-4 py-4 font-display text-lg tracking-wide text-white transition group-hover:text-brand-green sm:text-xl">
+      <span className="flex flex-1 items-center justify-center px-4 py-[1.15rem] font-display text-[1.35rem] leading-none tracking-[0.04em] text-[#1a1a1a] sm:text-[1.45rem]">
         {label}
       </span>
     </a>
@@ -48,23 +48,25 @@ function SocialLinkButton({
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-brand-bg">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(92,255,154,0.08),_transparent_55%)]" />
-
-      <main className="relative mx-auto flex min-h-screen w-full max-w-md flex-col items-center justify-center px-5 py-12 sm:px-6">
-        <header className="mb-8 flex w-full flex-col items-center text-center">
-          <div className="mb-5 flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-white/[0.05] p-3 shadow-[0_0_40px_rgba(92,255,154,0.12)]">
-            <img src="/pickwin-logo.png" alt="PickWin" className="h-full w-full object-contain" />
+    <div className="page-bg min-h-screen">
+      <main className="mx-auto flex min-h-screen w-full max-w-[22rem] flex-col items-center justify-center px-5 py-14 sm:max-w-[24rem] sm:px-6">
+        <header className="mb-9 flex w-full flex-col items-center text-center">
+          <div className="mb-6 flex h-[7.5rem] w-[7.5rem] items-center justify-center overflow-hidden rounded-full bg-black shadow-[0_0_0_3px_rgba(92,255,154,0.25),0_12px_40px_rgba(0,0,0,0.35)]">
+            <img
+              src="/pickwin-logo.png"
+              alt="PickWin"
+              className="h-[4.5rem] w-auto max-w-none object-contain"
+            />
           </div>
 
-          <h1 className="font-display text-[clamp(1.75rem,7vw,2.5rem)] tracking-wide text-white">
+          <h1 className="font-display text-[clamp(1.65rem,6.5vw,2.15rem)] tracking-[0.06em] text-white">
             PickWin social media
           </h1>
 
-          <div className="mt-4 h-px w-full max-w-[220px] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+          <div className="mt-5 h-px w-full bg-white/30" />
         </header>
 
-        <nav className="flex w-full flex-col gap-3" aria-label="Réseaux sociaux PickWin">
+        <nav className="flex w-full flex-col gap-4" aria-label="Réseaux sociaux PickWin">
           {SOCIAL_LINKS.map((link) => (
             <Fragment key={link.label}>
               <SocialLinkButton label={link.label} href={link.href} icon={link.icon} />

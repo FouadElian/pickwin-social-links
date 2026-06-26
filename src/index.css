@@ -11,15 +11,19 @@
 
 @layer base {
   body {
-    @apply bg-brand-bg text-white font-sans antialiased;
+    @apply text-white font-sans antialiased;
+    background-color: #383838;
   }
 }
 
 @layer utilities {
+  .page-bg {
+    background:
+      radial-gradient(ellipse 90% 55% at 50% 12%, rgba(92, 255, 154, 0.14) 0%, transparent 55%),
+      radial-gradient(ellipse 120% 90% at 50% -10%, #6d6d6d 0%, #515151 42%, #383838 100%);
+  }
+
   .glow-green {
     box-shadow: 0 0 24px rgba(92, 255, 154, 0.35);
-  }
-  .text-glow-green {
-    text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
   }
 }
